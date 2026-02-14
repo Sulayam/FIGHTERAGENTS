@@ -12,5 +12,5 @@
         "notebook.source.fixAll": true,
         "notebook.source.organizeImports": true
     },
-    "python.defaultInterpreterPath": "philoagents-api/.venv/bin/python"
+    "python.defaultInterpreterPath": "fighteragents-api/.venv/bin/python"
 }

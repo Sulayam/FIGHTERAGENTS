@@ -247,6 +247,7 @@ celerybeat.pid
 # Environments
 .env
 .venv
+.philo-fighter-venv
 env/
 venv/
 ENV/
@@ -314,3 +315,6 @@ pyrightconfig.json
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,python,visualstudiocode,pycharm+all
+.claude/
+find_philo_words_fast.zsh
+.vscode/

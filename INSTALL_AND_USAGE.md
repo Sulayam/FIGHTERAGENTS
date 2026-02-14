@@ -1,51 +1,4 @@
-<table style="border-collapse: collapse; border: none;">
-  <tr style="border: none;">
-    <td width="20%" style="border: none;">
-      <a href="https://theneuralmaze.substack.com/" aria-label="The Neural Maze">
-        <img src="https://avatars.githubusercontent.com/u/151655127?s=400&u=2fff53e8c195ac155e5c8ee65c6ba683a72e655f&v=4" alt="The Neural Maze Logo" width="150"/>
-      </a>
-    </td>
-    <td width="80%" style="border: none;">
-      <div>
-        <h2>📬 Stay Updated</h2>
-        <p><b><a href="https://theneuralmaze.substack.com/">Join The Neural Maze</a></b> and learn to build AI Systems that actually work, from principles to production. Every Wednesday, directly to your inbox. Don't miss out!
-</p>
-      </div>
-    </td>
-  </tr>
-</table>
-
-<p align="center">
-  <a href="https://theneuralmaze.substack.com/">
-    <img src="https://img.shields.io/static/v1?label&logo=substack&message=Subscribe%20Now&style=for-the-badge&color=black&scale=2" alt="Subscribe Now" height="40">
-  </a>
-</p>
-
-<table style="border-collapse: collapse; border: none;">
-  <tr style="border: none;">
-    <td width="20%" style="border: none;">
-      <a href="https://decodingml.substack.com/" aria-label="Decoding ML">
-        <img src="https://github.com/user-attachments/assets/f2f2f9c0-54b7-4ae3-bf8d-23a359c86982" alt="Decoding ML Logo" width="150"/>
-      </a>
-    </td>
-    <td width="80%" style="border: none;">
-      <div>
-        <h2>📬 Stay Updated</h2>
-        <p><b><a href="https://decodingml.substack.com/">Join Decoding ML</a></b> for proven content on designing, coding, and deploying production-grade AI systems with software engineering and MLOps best practices to help you ship AI applications. Every week, straight to your inbox.</p>
-      </div>
-    </td>
-  </tr>
-</table>
-
-<p align="center">
-  <a href="https://decodingml.substack.com/">
-    <img src="https://img.shields.io/static/v1?label&logo=substack&message=Subscribe%20Now&style=for-the-badge&color=black&scale=2" alt="Subscribe Now" height="40">
-  </a>
-</p>
-
-------
-
-# 🚀 Installation and Usage Guide
+# Installation and Usage Guide
 
 This guide will help you set up and run a ...
 
@@ -75,7 +28,7 @@ For all the modules, you'll need the following tools installed locally:
 <details>
 <summary><b>📌 Windows users also need to install WSL (Click to expand)</b></summary>
 
-We will be using Unix commands across the course, so if you are using Windows, you will need to **install WSL**, which will install a Linux kernel on your Windows machine and allow you to use the Unix commands from our course (this is the recommended way to write software on Windows). 
+We will be using Unix commands across the course, so if you are using Windows, you will need to **install WSL**, which will install a Linux kernel on your Windows machine and allow you to use the Unix commands from our course (this is the recommended way to write software on Windows).
 
 🔗 [Follow this guide to install WSL](https://www.youtube.com/watch?v=YByZ_sOOWsQ).
 </details>
@@ -86,33 +39,33 @@ Also, the course requires access to these cloud services. The authentication to 
 
 | Service | Purpose | Cost | Environment Variable | Setup Guide | Starting with Module |
 |---------|---------|------|---------------------|-------------| ---------------------|
-| [Groq](https://rebrand.ly/philoagents-groq) | LLM API that powers the agents | Free tier | `GROQ_API_KEY` | [Quick Start Guide](https://rebrand.ly/philoagents-groq-quickstart) | Module 1 |
-| [Opik](https://rebrand.ly/philoagents-opik) | LLMOps | Free tier (Hosted on Comet - same API Key) | `COMET_API_KEY` | [Quick Start Guide](https://rebrand.ly/philoagents-opik-quickstart) | Module 5 |
+| [Groq](https://rebrand.ly/fighteragents-groq) | LLM API that powers the agents | Free tier | `GROQ_API_KEY` | [Quick Start Guide](https://rebrand.ly/fighteragents-groq-quickstart) | Module 1 |
+| [Opik](https://rebrand.ly/fighteragents-opik) | LLMOps | Free tier (Hosted on Comet - same API Key) | `COMET_API_KEY` | [Quick Start Guide](https://rebrand.ly/fighteragents-opik-quickstart) | Module 5 |
 | [OpenAI API](https://openai.com/index/openai-api/) | LLM API used for evaluation | Pay-per-use | `OPENAI_API_KEY` | [Quick Start Guide](https://platform.openai.com/docs/quickstart) | Module 5 |
 
-When working locally, the infrastructure is set up using Docker. Thus, you can use the default values found in the [config.py](philoagents-api/src/philoagents/config.py) file for all the infrastructure-related environment variables.
+When working locally, the infrastructure is set up using Docker. Thus, you can use the default values found in the [config.py](fighteragents-api/src/fighteragents/config.py) file for all the infrastructure-related environment variables.
 
 But, in case you want to deploy the code, you'll need to setup the following services with their corresponding environment variables:
 
 | Service | Purpose | Cost | Required Credentials | Setup Guide |
-|---------|---------|------|---------------------|-------------| 
-| [MongoDB](https://rebrand.ly/philoagents-mongodb) | Document database | Free tier | `MONGODB_URI` | 1. [Create a free MongoDB Atlas account](https://rebrand.ly/philoagents-mongodb-setup-1) <br> 2. [Create a Cluster](https://rebrand.ly/philoagents-mongodb-setup-2) </br> 3. [Add a Database User](https://rebrand.ly/philoagents-mongodb-setup-3) </br> 4. [Configure a Network Connection](https://rebrand.ly/philoagents-mongodb-setup-4) |
+|---------|---------|------|---------------------|-------------|
+| [MongoDB](https://rebrand.ly/fighteragents-mongodb) | Document database | Free tier | `MONGODB_URI` | 1. [Create a free MongoDB Atlas account](https://rebrand.ly/fighteragents-mongodb-setup-1) <br> 2. [Create a Cluster](https://rebrand.ly/fighteragents-mongodb-setup-2) </br> 3. [Add a Database User](https://rebrand.ly/fighteragents-mongodb-setup-3) </br> 4. [Configure a Network Connection](https://rebrand.ly/fighteragents-mongodb-setup-4) |
 
 # 🎯 Getting Started
 
 ## 1. Clone the Repository
 
-Start by cloning the repository and navigating to the `philoagents-api` project directory:
+Start by cloning the repository and navigating to the `fighteragents-api` project directory:
 ```
-git clone https://github.com/neural-maze/philoagents-course.git
-cd philoagents-course/philoagents-api
+git clone https://github.com/Sulayam/FIGHTERAGENTS.git
+cd fighteragents-course/fighteragents-api
 ```
 
 Next, we have to prepare your Python environment and its dependencies.
 
 ## 2. Installation
 
-Inside the `philoagents-api` directory, to install the dependencies and activate the virtual environment, run the following commands:
+Inside the `fighteragents-api` directory, to install the dependencies and activate the virtual environment, run the following commands:
 
 ```bash
 uv venv .venv
@@ -133,7 +86,7 @@ This command will:
 
 ## 3. Environment Configuration
 
-Before running any command, inside the `philoagents-api` directory, you have to set up your environment:
+Before running any command, inside the `fighteragents-api` directory, you have to set up your environment:
 1. Create your environment file:
    ```bash
    cp .env.example .env
@@ -145,10 +98,10 @@ Before running any command, inside the `philoagents-api` directory, you have to 
 The project follows a clean architecture structure commonly used in production Python projects:
 
 ```bash
-philoagents-api/
+fighteragents-api/
     ├── data/                  # Data files
     ├── notebooks/             # Notebooks
-    ├── src/philoagents/       # Main package directory
+    ├── src/fighteragents/       # Main package directory
     │   ├── application/       # Application layer
     │   ├── domain/            # Domain layer
     │   ├── infrastructure/    # Infrastructure layer
@@ -167,7 +120,7 @@ If you are a Windows user and need to use the `make` command, you'll need to ins
 
 #### Step 1: Install GnuWin32
 
-1.  **Download GnuWin32:** Go to the official GnuWin32 website. 
+1.  **Download GnuWin32:** Go to the official GnuWin32 website.
 2.  **Run the installer:** Follow the on-screen instructions to install GnuWin32. The default installation path is typically `C:\Program Files (x86)\GnuWin32`.
 
 #### Step 2: Configure the `PATH`
@@ -213,17 +166,17 @@ We use Docker to set up the local infrastructure (Game UI, Agent API, MongoDB).
 > [!WARNING]
 > Before running the command below, ensure you do not have any processes running on ports `27017` (MongoDB), `8000` (Agent API) and `8080` (Game UI).
 
-From the root `philoagents-course` directory, to start the Docker infrastructure, run:
+From the root `fighteragents-course` directory, to start the Docker infrastructure, run:
 ```bash
 make infrastructure-up
 ```
 
-From the root `philoagents-course` directory, to stop the Docker infrastructure, run:
+From the root `fighteragents-course` directory, to stop the Docker infrastructure, run:
 ```bash
 make infrastructure-stop
 ```
 
-From the root `philoagents-course` directory, to build the Docker images (without running them), run:
+From the root `fighteragents-course` directory, to build the Docker images (without running them), run:
 ```bash
 make infrastructure-build
 ```
@@ -236,13 +189,13 @@ After you have set up your environment (through the `.env` file) and local infra
 
 As most of the modules are coupled, you must test them all at once.
 
-First, from the root `philoagents-course` directory, populate the long term memory within your MongoDB instance (required for agentic RAG) with the following command:
+First, from the root `fighteragents-course` directory, populate the long term memory within your MongoDB instance (required for agentic RAG) with the following command:
 ```bash
 make create-long-term-memory
 ```
 
 > [!NOTE]
-> To visualize the raw and RAG data from MongoDB, we recommend using [MongoDB Compass](https://rebrand.ly/philoagents-mongodb-compass) or Mongo's official IDE plugin (e.g., `MongoDB for VS Code`). To connect to the working MongoDB instance, use the `MONGODB_URI` value from the `.env` file or found inside the [config.py](philoagents-api/src/philoagents/config.py) file.
+> To visualize the raw and RAG data from MongoDB, we recommend using [MongoDB Compass](https://rebrand.ly/fighteragents-mongodb-compass) or Mongo's official IDE plugin (e.g., `MongoDB for VS Code`). To connect to the working MongoDB instance, use the `MONGODB_URI` value from the `.env` file or found inside the [config.py](fighteragents-api/src/fighteragents/config.py) file.
 
 Next, you can access the game by typing in your browser:
 ```
@@ -250,13 +203,13 @@ http://localhost:8080
 ```
 Which will open the game UI, similar to the screenshot below:
 
-![Philosopher Town](static/game_starting_page.png)
+![UFCFighter Town](static/game_starting_page.png)
 
 To see the instructions for playing the game, you can click on the `Instructions` button. Click the `Let's Play!` button to start the game.
 
-Now you can start playing the game, wander around the town and talk to our philosophers, as seen in the screenshot below:
+Now you can start playing the game, wander around the town and talk to our ufcfighters, as seen in the screenshot below:
 
-![Philosopher Town](static/game_socrates_example.png)
+![UFCFighter Town](static/game_socrates_example.png)
 
 You can also access the API documentation by typing in your browser:
 ```
@@ -277,20 +230,20 @@ make delete-long-term-memory
 
 Only module 5 on evaluation and monitoring has its own instructions.
 
-First, to visualize the prompt traces, as seen in the screenshot below, visit [Opik](https://rebrand.ly/philoagents-opik-dashboard).
+First, to visualize the prompt traces, as seen in the screenshot below, visit [Opik](https://rebrand.ly/fighteragents-opik-dashboard).
 
 ![Opik](static/opik_monitoring_example.png)
 
-To evaluate the agents, from the root `philoagents-course` directory, you can run the following command:
+To evaluate the agents, from the root `fighteragents-course` directory, you can run the following command:
 ```bash
 make evaluate-agent
 ```
 
-To visualize the evaluation results, as seen in the screenshot below, you also have to visit [Opik](https://rebrand.ly/philoagents-opik-dashboard).
+To visualize the evaluation results, as seen in the screenshot below, you also have to visit [Opik](https://rebrand.ly/fighteragents-opik-dashboard).
 
 ![Opik](static/opik_evaluation_example.png)
 
-We already generated a dataset for you found at [data/evaluation_dataset.json](philoagents-api/data/evaluation_dataset.json), but in case you want to generate a new one (to override the existing one), you can run the following command:
+We already generated a dataset for you found at [data/evaluation_dataset.json](fighteragents-api/data/evaluation_dataset.json), but in case you want to generate a new one (to override the existing one), you can run the following command:
 ```bash
 make generate-evaluation-dataset
 ```

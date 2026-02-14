@@ -1,0 +1,68 @@
+[
+    {
+        "id": "conor",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Conor_McGregor"
+        ]
+    },
+    {
+        "id": "khabib",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Khabib_Nurmagomedov"
+        ]
+    },
+    {
+        "id": "islam",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Islam_Makhachev"
+        ]
+    },
+    {
+        "id": "charles",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Charles_Oliveira"
+        ]
+    },
+    {
+        "id": "chael",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Chael_Sonnen"
+        ]
+    },
+    {
+        "id": "nate",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Nate_Diaz"
+        ]
+    },
+    {
+        "id": "rampage",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Quinton_Jackson"
+        ]
+    },
+    {
+        "id": "khamzat",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Khamzat_Chimaev"
+        ]
+    },
+    {
+        "id": "nick",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Nick_Diaz"
+        ]
+    },
+    {
+        "id": "joe_rogan",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Joe_Rogan"
+        ]
+    },
+    {
+        "id": "dana",
+        "urls": [
+            "https://en.wikipedia.org/wiki/Dana_White"
+        ]
+    }
+]
