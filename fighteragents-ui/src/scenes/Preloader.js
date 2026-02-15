@@ -33,6 +33,20 @@ export class Preloader extends Scene
         this.load.atlas("nick", "characters/nick/atlas.png", "characters/nick/atlas.json");
         this.load.atlas("joe_rogan", "characters/joe_rogan/atlas.png", "characters/joe_rogan/atlas.json");
         this.load.atlas("dana_white", "characters/dana_white/atlas.png", "characters/dana_white/atlas.json");
+
+        // Crowd fan atlases
+        this.load.atlas("ada",       "characters/ada/atlas.png",       "characters/ada/atlas.json");
+        this.load.atlas("aristotle", "characters/aristotle/atlas.png", "characters/aristotle/atlas.json");
+        this.load.atlas("chomsky",   "characters/chomsky/atlas.png",   "characters/chomsky/atlas.json");
+        this.load.atlas("dennett",   "characters/dennett/atlas.png",   "characters/dennett/atlas.json");
+        this.load.atlas("descartes", "characters/descartes/atlas.png", "characters/descartes/atlas.json");
+        this.load.atlas("leibniz",   "characters/leibniz/atlas.png",   "characters/leibniz/atlas.json");
+        this.load.atlas("miguel",    "characters/miguel/atlas.png",    "characters/miguel/atlas.json");
+        this.load.atlas("paul",      "characters/paul/atlas.png",      "characters/paul/atlas.json");
+        this.load.atlas("plato",     "characters/plato/atlas.png",     "characters/plato/atlas.json");
+        this.load.atlas("searle",    "characters/searle/atlas.png",    "characters/searle/atlas.json");
+        this.load.atlas("socrates",  "characters/socrates/atlas.png",  "characters/socrates/atlas.json");
+        this.load.atlas("turing",    "characters/turing/atlas.png",    "characters/turing/atlas.json");
     }
 
     create ()

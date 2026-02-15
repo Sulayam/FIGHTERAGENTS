@@ -2,6 +2,7 @@ import { Scene } from 'phaser';
 import Character from '../classes/Character';
 import DialogueBox from '../classes/DialogueBox';
 import DialogueManager from '../classes/DialogueManager';
+import { CrowdFan, FAN_ATLASES } from '../classes/CrowdFan';
 
 export class Game extends Scene
 {
@@ -16,6 +17,7 @@ export class Game extends Scene
         this.activeUFCFighter = null;
         this.dialogueManager = null;
         this.ufcfighters = [];
+        this.fans = [];
         this.labelsVisible = true;
     }
 
@@ -26,6 +28,10 @@ export class Game extends Scene
         const layers = this.createLayers(map, tileset);
         let screenPadding = 20;
         let maxDialogueHeight = 200;
+
+        this.createFanAnimations();
+        this.createCrowdFans(map);
+        this.setupFanCheerTimer();
 
         this.createUFCFighters(map, layers);
 
@@ -316,6 +322,100 @@ export class Game extends Scene
                 this.player.setTexture("sophia", `sophia-${direction}`);
             }
         }
+    }
+
+    createFanAnimations() {
+        const anims = this.anims;
+        const directions = ['front', 'back', 'left', 'right'];
+
+        for (const { key, prefix } of FAN_ATLASES) {
+            for (const dir of directions) {
+                const animKey = `${key}-${dir}-cheer`;
+                if (!anims.exists(animKey)) {
+                    anims.create({
+                        key: animKey,
+                        frames: anims.generateFrameNames(key, {
+                            prefix: `${prefix}-${dir}-walk-`,
+                            start: 0,
+                            end: 8,
+                            zeroPad: 4,
+                        }),
+                        frameRate: 8,
+                        repeat: 0,
+                    });
+                }
+            }
+        }
+    }
+
+    createCrowdFans(map) {
+        const TILE_SIZE = 32;
+        const CX = 40;
+        const CY = 40;
+        const ROWS = 80;
+        const COLS = 80;
+        const SPACING = 1;
+        const CHEER_CYCLE = 4000;
+        const SEAT_GIDS = new Set([2, 3, 4]);
+
+        const belowLayer = map.getLayer('Below Player').data;
+        this.fans = [];
+
+        for (let row = 0; row < ROWS; row++) {
+            for (let col = 0; col < COLS; col++) {
+                if (col % SPACING !== 0 || row % SPACING !== 0) continue;
+
+                const tile = belowLayer[row][col];
+                if (!SEAT_GIDS.has(tile.index)) continue;
+
+                const px = col * TILE_SIZE + TILE_SIZE / 2;
+                const py = row * TILE_SIZE + TILE_SIZE / 2;
+
+                const dx = CX - col;
+                const dy = CY - row;
+                const direction =
+                    Math.abs(dx) > Math.abs(dy)
+                        ? (dx > 0 ? 'right' : 'left')
+                        : (dy > 0 ? 'front' : 'back');
+
+                const atlasEntry = FAN_ATLASES[(col * 13 + row * 7) % FAN_ATLASES.length];
+                const cheerOffset = Phaser.Math.Between(0, CHEER_CYCLE - 1);
+
+                const fan = new CrowdFan(
+                    this, px, py,
+                    atlasEntry.key, atlasEntry.prefix,
+                    direction, cheerOffset
+                );
+
+                this.fans.push(fan);
+            }
+        }
+    }
+
+    setupFanCheerTimer() {
+        const CHEER_CYCLE = 4000;
+        const CHEER_DURATION = 1125;
+
+        this.time.addEvent({
+            delay: 250,
+            loop: true,
+            callback: () => {
+                const now = this.time.now;
+                for (const fan of this.fans) {
+                    const phase = (now + fan.cheerOffset) % CHEER_CYCLE;
+                    if (phase < CHEER_DURATION) {
+                        if (!fan.sprite.anims.isPlaying) {
+                            fan.sprite.play(fan.cheerAnimKey);
+                        }
+                    } else {
+                        if (fan.sprite.anims.isPlaying) {
+                            fan.sprite.anims.stop();
+                            fan.sprite.setFrame(fan.idleFrame);
+                        }
+                    }
+                }
+            },
+        });
     }
 
     toggleUFCFighterLabels(visible) {
