@@ -16,9 +16,7 @@ export class Preloader extends Scene
         this.load.image('logo', 'logo.png');
 
         // Tilesets
-        this.load.image("tuxmon-tiles", "tilesets/tuxmon-sample-32px-extruded.png");
-        this.load.image("greece-tiles", "tilesets/ancient_greece_tileset.png");
-        this.load.image("plant-tiles", "tilesets/plant.png");
+        this.load.image("arena-tiles", "tilesets/ufc_arena.png");
 
         // Tilemap
         this.load.tilemapTiledJSON("map", "tilemaps/fighteragents-town.json");

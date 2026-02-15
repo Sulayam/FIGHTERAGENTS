@@ -140,11 +140,8 @@ export class Game extends Scene
     }
 
     addTileset(map) {
-        const tuxmonTileset = map.addTilesetImage("tuxmon-sample-32px-extruded", "tuxmon-tiles");
-        const greeceTileset = map.addTilesetImage("ancient_greece_tileset", "greece-tiles");
-        const plantTileset = map.addTilesetImage("plant", "plant-tiles");
-
-        return [tuxmonTileset, greeceTileset, plantTileset];
+        const arenaTileset = map.addTilesetImage("ufc_arena", "arena-tiles");
+        return [arenaTileset];
     }
 
     createLayers(map, tilesets) {
