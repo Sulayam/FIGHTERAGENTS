@@ -100,6 +100,28 @@ Full course video (2h 30m):
     <a href="https://youtu.be/pg1Sn9rsFak?si=bKMdL-EbaMb90PT3"><img src="static/thumbnails/full_course_play.png" alt="Full Course" width="500"></a>
 </p>
 
+## Learning Challenges
+
+If you've cloned this repo to learn from it, here are two bugs intentionally left in the codebase for you to find and fix. They make great exercises for understanding how the UI and backend connect.
+
+### Challenge 1: Joe Rogan Won't Talk (UI Bug)
+
+Joe Rogan is present in the game but you can't interact with him no matter how close you walk. Here's your hint: **he is physically stuck at the commentary table next to the octagon**. Because of the collision tiles surrounding the table, your player character can never get close enough to trigger the interaction.
+
+The fix must be made in the **game UI code** (not the backend). Think about how the "nearby" detection works in `Character.js` and what configuration the `Game.js` passes when creating characters.
+
+### Challenge 2: Dana White Won't Talk (Backend Bug)
+
+Dana White appears in the arena but talking to him returns an error. Unlike Joe Rogan's problem, this one lives in the **backend/API code**. Trace what happens when the UI sends a character ID to the agent API — pay close attention to how character IDs are defined in the UI versus how they're registered in the backend factory.
+
+### Bonus Challenge: Dana White Web Search Node
+
+Once you've fixed the Dana White bug, try this bonus:
+
+Add a new LangGraph node to the agent workflow that makes Dana White's agent **search the web in real-time** when you ask him about upcoming UFC events. The node should use DuckDuckGo (already available via `langchain-community`) to fetch live event data and inject it into Dana's context before he responds.
+
+Hint: look at `nodes.py`, `graph.py`, and how `ufcfighter_name` flows through the `UFCFighterState`.
+
 ## Questions and Troubleshooting
 
 Have questions or running into issues?
@@ -115,7 +137,14 @@ Contributions are welcome! See the [contributing guide](CONTRIBUTING.md) for det
 
 ## Attribution
 
-This project is built on top of [PhiloAgents](https://github.com/neural-maze/philoagents-course) by [Miguel Otero Pedrido](https://github.com/MichaelisTrofficus) and [Paul Iusztin](https://github.com/iusztinpaul). The original course was created by [The Neural Maze](https://theneuralmaze.substack.com/) and [Decoding ML](https://decodingml.substack.com/).
+This project is a UFC-themed fork of [PhiloAgents](https://github.com/neural-maze/philoagents-course), an open-source course created by [Miguel Otero Pedrido](https://github.com/MichaelisTrofficus) ([@neural_maze](https://theneuralmaze.substack.com/) on Substack) and [Paul Iusztin](https://github.com/iusztinpaul) ([@decodingml](https://decodingml.substack.com/) on Substack).
+
+Miguel's original course teaches how to build AI agents that impersonate philosophers inside an interactive game world — using LangGraph, RAG, MongoDB, and Phaser 3. This fork rebrands the concept with a UFC theme (fighters, arena, Dana White, Joe Rogan) while keeping the same solid architecture underneath.
+
+If you find this project useful, please go check out and support Miguel's original work:
+- Original repo: [neural-maze/philoagents-course](https://github.com/neural-maze/philoagents-course)
+- Miguel's Substack: [The Neural Maze](https://theneuralmaze.substack.com/)
+- Paul's Substack: [Decoding ML](https://decodingml.substack.com/)
 
 ## License
 
