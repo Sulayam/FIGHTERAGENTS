@@ -24,7 +24,7 @@ This project is built on top of the [PhiloAgents](https://github.com/neural-maze
 
 **Tech stack:** LangGraph, LangChain, Groq, MongoDB, FastAPI, WebSockets, Phaser 3, Docker
 
-<video src="https://github.com/user-attachments/assets/aedc041e-00ed-42ce-99f2-24ce74847e7a"/></video>
+<video src="https://github.com/Sulayam/FIGHTERAGENTS/issues/2#issue-4029896079"/></video>
 
 ## What You'll Learn
 
