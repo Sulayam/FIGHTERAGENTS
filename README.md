@@ -13,6 +13,8 @@
 
 FighterAgents is an AI agent simulation engine that impersonates UFC fighters in an interactive game environment. Walk around the arena, approach fighters like Conor McGregor, Khabib Nurmagomedov, or Dana White, and have real conversations powered by LLMs.
 
+<img width="2202" height="1644" alt="image" src="https://github.com/user-attachments/assets/e2b7e74b-93f5-4f35-a683-4a0264efca87" />
+
 This project is built on top of the [PhiloAgents](https://github.com/neural-maze/philoagents-course) course by Miguel Otero Pedrido and Paul Iusztin. The original course taught how to build AI agents impersonating philosophers — FighterAgents extends that foundation with a UFC theme.
 
 **Key features:**
